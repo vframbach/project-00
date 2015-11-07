@@ -27,8 +27,10 @@ $(document).ready(function() {
 
 
 
-    $( '.reset-button' ).click(function() {
+    $( '.start-button' ).click(function() {
     	isGameStarted = true;
+    	$('.start-button').hide();
+    	$('.reset-button').show();
     });
 
      $('button.addPlayer1').click(function() {
@@ -44,5 +46,15 @@ $(document).ready(function() {
     $('.player1Name, .player2Name').keyup(function(e) {
     	e.stopPropagation();
     	e.preventDefault();
+    });
+
+    $( '.reset-button' ).click(function() {
+    	player1Position = 0;
+		player2Position = 0;
+		gameWinner = false;
+    	$('.box').animate({left: player1Position},80);
+    	$('.other-box').animate({left: player2Position},80);
+    	$('.start-button').show();
+    	$('.reset-button').hide();
     });
 });

@@ -2,9 +2,11 @@ $(document).ready(function() {
 	var player1Position = 0;
 	var player2Position = 0;
 	var isGameStarted = false;
+	var gameWinner = false;
+	var gameWidth = 1120;
 
     $(document).keyup(function(e) {
-    	if (!isGameStarted) {
+    	if (!isGameStarted || gameWinner) {
     		return;
     	}
     	console.log(e);
@@ -15,7 +17,15 @@ $(document).ready(function() {
         	player2Position += 40;
         	$('.other-box').animate({left: player2Position},80);
         }
+
+        if (player1Position >= gameWidth) {
+        	gameWinner = true;
+        } else if (player2Position >= gameWidth) {
+        	gameWinner = true;
+        }
     });
+
+
 
     $( '.reset-button' ).click(function() {
     	isGameStarted = true;

@@ -20,3 +20,11 @@
     position: relative;
     width: 35px;
 }
+
+form {
+    display: inline-block;
+}
+.playerName {
+    font-size: 14px;
+	font-family: Garamond, Times, Serif;
+}

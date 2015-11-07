@@ -1,1 +1,1 @@
-# project-00
+Project 0 -- Race car game

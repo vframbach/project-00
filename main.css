@@ -1,3 +1,22 @@
 .racetrack {
-	background-color: gray;
+	background-color: black;
+	height: 50px;
+	margin: 0 auto;
+}
+
+.box {
+    background-color: #FF0000;
+    border-radius: 10px;
+   	height: 35px;
+    position: relative;
+    width: 35px;
+}
+
+.other-box {
+
+    background-color: blue;
+    border-radius: 10px;
+   	height: 35px;
+    position: relative;
+    width: 35px;
 }

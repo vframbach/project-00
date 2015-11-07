@@ -10,29 +10,36 @@ $(document).ready(function() {
     		return;
     	}
     	console.log(e);
-    	if (e.keyCode == 79) {
+    	if (e.keyCode == 88) {
     		player1Position += 40;
         	$('.box').animate({left: player1Position},80);
-        } else if  (e.keyCode == 88) {	
+        } else if  (e.keyCode == 79) {	
         	player2Position += 40;
         	$('.other-box').animate({left: player2Position},80);
         }
 
         if (player1Position >= gameWidth) {
-        	gameWinner = true;
+        	gameWinner = 1;
         } else if (player2Position >= gameWidth) {
-        	gameWinner = true;
+        	gameWinner = 2;
+        }
+
+        if (gameWinner === 1) {
+        	$('.player1Output').append("Player 1 wins!");
+        } else if (gameWinner === 2) {
+        	$('.player2Output').append("Player 2 wins!");
         }
     });
 
-
-
+// once start button is clicked, x and o move the red and blue players
+// once game starts, start button is hidden and reset button appears
     $( '.start-button' ).click(function() {
     	isGameStarted = true;
     	$('.start-button').hide();
     	$('.reset-button').show();
     });
 
+// players each enter name in box and it appears under box
      $('button.addPlayer1').click(function() {
     	var toAdd = $("input.player1Name").val();
         $('.player1Output').append("<p>"+toAdd+"</p>");
@@ -43,11 +50,7 @@ $(document).ready(function() {
         $('.player2Output').append("<p>"+toAdd+"</p>");
     });
 
-    $('.player1Name, .player2Name').keyup(function(e) {
-    	e.stopPropagation();
-    	e.preventDefault();
-    });
-
+// reset button returns both players to start line and button switches to start button
     $( '.reset-button' ).click(function() {
     	player1Position = 0;
 		player2Position = 0;

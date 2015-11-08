@@ -14,6 +14,8 @@ $(document).ready(function() {
 	var gameWinner = false;
 	var gameWidth = 1120;
 
+// key up after key press signals movement
+// player 1 is X (key code 88), player 2 is O (key code 79)
     $(document).keyup(function(e) {
     	if (!isGameStarted || gameWinner) {
     		return;
@@ -27,19 +29,27 @@ $(document).ready(function() {
         	$('.other-box').animate({left: player2.position},80);
         }
 
+// determines winner
         if (player1.position >= gameWidth) {
         	gameWinner = player1;
         } else if (player2.position >= gameWidth) {
         	gameWinner = player2;
         }
 
+// displays how many wins each player has
         if (gameWinner === player1) {
         	player1.wins++;
-        	$('.player1Output').append("Player 1 has " + player1.wins + " wins!");
+        	$('.player1Output').append("<p>Player 1 has " + player1.wins + " wins!</p>");
         } else if (gameWinner === player2) {
         	player2.wins++;
-        	$('.player2Output').append("Player 2 has " + player2.wins + " wins!");
+        	$('.player2Output').append("<p>Player 2 has " + player2.wins + " wins!</p>");
         }
+    });
+
+    $('.player1Name, .player2Name').keypress(function(e) {
+    	if (e.keyCode == 13) {
+    		this.blur();
+    	}
     });
 
 // once start button is clicked, x and o move the red and blue players
@@ -65,12 +75,12 @@ $(document).ready(function() {
     $( '.reset-button' ).click(function() {
     	player1.position = 0;
 		player2.position = 0;
+    	isGameStarted = false;
 		gameWinner = false;
     	$('.box').animate({left: player1.position},80);
     	$('.other-box').animate({left: player2.position},80);
     	$('.start-button').show();
     	$('.reset-button').hide();
     });
-
 
 });

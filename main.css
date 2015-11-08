@@ -21,9 +21,6 @@
     width: 35px;
 }
 
-form {
-    display: inline-block;
-}
 .player1 {
 	color: red;
 }
@@ -33,4 +30,20 @@ form {
 }
 .reset-button {
 	display: none;
+}
+
+body {
+	/*background-color: #B3B3B3;*/
+}
+
+.player1Name {
+    background: transparent;
+    border: 1px dashed hsl(0, 43%, 83%);
+    font-size: 30px;
+}
+
+.player2Name {
+    background: transparent;
+    border: 1px dashed hsl(240, 43%, 83%);
+    font-size: 30px;
 }

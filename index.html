@@ -11,27 +11,29 @@
 </head>
 <body>
 	<div class="racetrack">
-		<div class="inner-racetrack"></div>
+		<div class="inner-racetrack">
+			<div class="container player-names">
+				<div class="row">
+				<div class="col-md-4 player1 well">
+					<p><input type="text" class="player1Name" value="Name goes here! "></p>
+		        	<p class="player1Output"></p>
+				</div>
+				<div class="col-md-4 text-center">
+					<button type="button" class="btn btn-default start-button">Start game</button>
+					<button type="button" class="btn btn-default reset-button">Reset game</button>
+					<img src="checkered-flag.png">
+				</div>
+				<div class="col-md-4 player2 well">
+					<p><input type="text" class="player2Name" value="Name goes here! "></p>
+		        	<p class="player2Output"></p>
+				</div>
+			</div>
+		  </div> 
+		</div>
 		<div class="box"></div>
      	<div class="other-box"></div>
      </div>
-  <div class="container player-names">
-	<div class="row">
-		<div class="col-md-4 player1 well">
-			<p><input type="text" class="player1Name" value="Name goes here! "></p>
-        	<p class="player1Output"></p>
-		</div>
-		<div class="col-md-4 text-center">
-			<button type="button" class="btn btn-default start-button">Start game</button>
-			<button type="button" class="btn btn-default reset-button">Reset game</button>
-			<img src="checkered-flag.png">
-		</div>
-		<div class="col-md-4 player2 well">
-			<p><input type="text" class="player2Name" value="Name goes here! "></p>
-        	<p class="player2Output"></p>
-		</div>
-	</div>
-  </div> 
+  
 <!-- jquery -->
  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 

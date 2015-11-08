@@ -1,11 +1,37 @@
+var player1Positions = [
+	{left: "10%", top: "0%"},
+	{left: "30%", top: "0%"},
+	{left: "50%", top: "0%"},
+	{left: "70%", top: "0%"},
+	{left: "90%", top: "0%"},
+	{left: "90%", top: "10%"},
+	{left: "90%", top: "30%"},
+	{left: "90%", top: "50%"},
+	{left: "90%", top: "70%"},
+	{left: "90%", top: "90%"}
+];
+
+var player2Positions = [
+	{left: "10%", top: "5%"},
+	{left: "30%", top: "5%"},
+	{left: "50%", top: "5%"},
+	{left: "70%", top: "5%"},
+	{left: "90%", top: "5%"},
+	{left: "95%", top: "10%"},
+	{left: "95%", top: "30%"},
+	{left: "95%", top: "50%"},
+	{left: "95%", top: "70%"},
+	{left: "95%", top: "90%"}
+];
+
 $(document).ready(function() {
 	var player1 = {
-		position: 10,
+		position: 0,
 		wins: 0,
 		name: null
 	};
 	var player2 = {
-		position: 10,
+		position: 0,
 		wins: 0,
 		name: null
 	};
@@ -22,11 +48,11 @@ $(document).ready(function() {
     	}
     	console.log(e);
     	if (e.keyCode == 88) {
-    		player1.position += 4;
-        	$('.box').animate({left: player1.position+'%'},80);
+    		player1.position += 1;
+        	$('.box').animate(player1Positions[player1.position],80);
         } else if  (e.keyCode == 79) {	
-        	player2.position += 4;
-        	$('.other-box').animate({left: player2.position+'%'},80);
+        	player2.position += 1;
+        	$('.other-box').animate(player2Positions[player2.position],80);
         }
 
 // determines winner
@@ -59,17 +85,23 @@ $(document).ready(function() {
     	$('.start-button').hide();
     	$('.reset-button').show();
     });
-
-// reset button returns both players to start line and button switches to start button
-    $( '.reset-button' ).click(function() {
-    	player1.position = 10;
-		player2.position = 10;
+    function resetGame() {
+    	player1.position = 0;
+		player2.position = 0;
     	isGameStarted = false;
 		gameWinner = false;
-    	$('.box').animate({left: player1.position+'%'},80);
-    	$('.other-box').animate({left: player2.position+'%'},80);
+        $('.box').animate(player1Positions[player1.position],80);
+		$('.other-box').animate(player2Positions[player2.position],80);
     	$('.start-button').show();
     	$('.reset-button').hide();
+    }
+// reset button returns both players to start line and button switches to start button
+    $( '.reset-button' ).click(function() {
+    	resetGame();
     });
+
+//initialized game by calling reset function 
+
+	resetGame();
 
 });

@@ -24,9 +24,12 @@
 form {
     display: inline-block;
 }
-.playerName {
-    font-size: 14px;
-	font-family: Garamond, Times, Serif;
+.player1 {
+	color: red;
+}
+
+.player2 {
+	color: blue;
 }
 .reset-button {
 	display: none;

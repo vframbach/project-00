@@ -1,6 +1,15 @@
 $(document).ready(function() {
-	var player1Position = 0;
-	var player2Position = 0;
+	var player1 = {
+		position: 0,
+		wins: 0,
+		name: null
+	};
+	var player2 = {
+		position: 0,
+		wins: 0,
+		name: null
+	};
+
 	var isGameStarted = false;
 	var gameWinner = false;
 	var gameWidth = 1120;
@@ -11,23 +20,25 @@ $(document).ready(function() {
     	}
     	console.log(e);
     	if (e.keyCode == 88) {
-    		player1Position += 40;
-        	$('.box').animate({left: player1Position},80);
+    		player1.position += 40;
+        	$('.box').animate({left: player1.position},80);
         } else if  (e.keyCode == 79) {	
-        	player2Position += 40;
-        	$('.other-box').animate({left: player2Position},80);
+        	player2.position += 40;
+        	$('.other-box').animate({left: player2.position},80);
         }
 
-        if (player1Position >= gameWidth) {
-        	gameWinner = 1;
-        } else if (player2Position >= gameWidth) {
-        	gameWinner = 2;
+        if (player1.position >= gameWidth) {
+        	gameWinner = player1;
+        } else if (player2.position >= gameWidth) {
+        	gameWinner = player2;
         }
 
-        if (gameWinner === 1) {
-        	$('.player1Output').append("Player 1 wins!");
-        } else if (gameWinner === 2) {
-        	$('.player2Output').append("Player 2 wins!");
+        if (gameWinner === player1) {
+        	player1.wins++;
+        	$('.player1Output').append("Player 1 has " + player1.wins + " wins!");
+        } else if (gameWinner === player2) {
+        	player2.wins++;
+        	$('.player2Output').append("Player 2 has " + player2.wins + " wins!");
         }
     });
 
@@ -52,12 +63,14 @@ $(document).ready(function() {
 
 // reset button returns both players to start line and button switches to start button
     $( '.reset-button' ).click(function() {
-    	player1Position = 0;
-		player2Position = 0;
+    	player1.position = 0;
+		player2.position = 0;
 		gameWinner = false;
-    	$('.box').animate({left: player1Position},80);
-    	$('.other-box').animate({left: player2Position},80);
+    	$('.box').animate({left: player1.position},80);
+    	$('.other-box').animate({left: player2.position},80);
     	$('.start-button').show();
     	$('.reset-button').hide();
     });
+
+
 });

@@ -27,6 +27,8 @@ html, body {
     border-radius: 10px;
    	height: 35px;
     position: absolute;
+    top: 0%;
+    left: 10%;
     width: 35px;
 }
 
@@ -37,6 +39,8 @@ html, body {
    	height: 35px;
     position: absolute;
     width: 35px;
+    top: 5%;
+    left: 10%;
 }
 
 .player1 {
@@ -59,12 +63,14 @@ body {
     background: transparent;
     border: 1px dashed hsl(0, 43%, 83%);
     font-size: 30px;
+    width: 100%;
 }
 
 .player2Name {
     background: transparent;
     border: 1px dashed hsl(240, 43%, 83%);
     font-size: 30px;
+    width: 100%;
 }
 
 .player1Output, .player2Output {
@@ -73,4 +79,8 @@ body {
 
 .checkered-flag {
 	width: 200px;
+}
+
+.player-names {
+	padding: 80px;
 }

@@ -1,14 +1,27 @@
+//player positions as they move around board
+//written as percentages so size of board can be changed
+
 var player1Positions = [
 	{left: "10%", top: "0%"},
 	{left: "30%", top: "0%"},
 	{left: "50%", top: "0%"},
 	{left: "70%", top: "0%"},
 	{left: "90%", top: "0%"},
-	{left: "90%", top: "10%"},
-	{left: "90%", top: "30%"},
-	{left: "90%", top: "50%"},
-	{left: "90%", top: "70%"},
-	{left: "90%", top: "90%"}
+	{left: "92%", top: "10%"},
+	{left: "92%", top: "30%"},
+	{left: "92%", top: "50%"},
+	{left: "92%", top: "70%"},
+	{left: "92%", top: "90%"},
+	{left: "90%", top: "90%"},
+	{left: "70%", top: "90%"},
+	{left: "50%", top: "90%"},
+	{left: "30%", top: "90%"},
+	{left: "10%", top: "90%"},
+	{left: "0%", top: "90%"},
+	{left: "0%", top: "70%"},
+	{left: "0%", top: "50%"},
+	{left: "0%", top: "30%"},
+	{left: "0%", top: "10%"}
 ];
 
 var player2Positions = [
@@ -16,29 +29,36 @@ var player2Positions = [
 	{left: "30%", top: "5%"},
 	{left: "50%", top: "5%"},
 	{left: "70%", top: "5%"},
-	{left: "90%", top: "5%"},
+	{left: "95%", top: "5%"},
 	{left: "95%", top: "10%"},
 	{left: "95%", top: "30%"},
 	{left: "95%", top: "50%"},
 	{left: "95%", top: "70%"},
-	{left: "95%", top: "90%"}
+	{left: "95%", top: "90%"},
+	{left: "90%", top: "95%"},
+	{left: "70%", top: "95%"},
+	{left: "50%", top: "95%"},
+	{left: "30%", top: "95%"},
+	{left: "10%", top: "95%"},
+	{left: "5%", top: "90%"},
+	{left: "5%", top: "70%"},
+	{left: "5%", top: "50%"},
+	{left: "5%", top: "30%"},
+	{left: "5%", top: "10%"}
 ];
 
 $(document).ready(function() {
 	var player1 = {
 		position: 0,
-		wins: 0,
-		name: null
+		wins: 0
 	};
 	var player2 = {
 		position: 0,
-		wins: 0,
-		name: null
+		wins: 0
 	};
 
 	var isGameStarted = false;
 	var gameWinner = false;
-	var gameWidth = 100;
 
 // key up after key press signals movement
 // player 1 is X (key code 88), player 2 is O (key code 79)
@@ -56,9 +76,9 @@ $(document).ready(function() {
         }
 
 // determines winner
-        if (player1.position >= 90) {
+        if (player1.position == player1Positions.length - 1) {
         	gameWinner = player1;
-        } else if (player2.position >= 90) {
+        } else if (player2.position == player2Positions.length - 1) {
         	gameWinner = player2;
         }
 

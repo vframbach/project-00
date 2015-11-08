@@ -39,10 +39,10 @@ $(document).ready(function() {
 // displays how many wins each player has
         if (gameWinner === player1) {
         	player1.wins++;
-        	$('.player1Output').append("<p>Player 1 has " + player1.wins + " wins!</p>");
+        	$('.player1Output').append("🏆 ");
         } else if (gameWinner === player2) {
         	player2.wins++;
-        	$('.player2Output').append("<p>Player 2 has " + player2.wins + " wins!</p>");
+        	$('.player2Output').append("🏆 ");
         }
     });
 
@@ -58,17 +58,6 @@ $(document).ready(function() {
     	isGameStarted = true;
     	$('.start-button').hide();
     	$('.reset-button').show();
-    });
-
-// players each enter name in box and it appears under box
-     $('button.addPlayer1').click(function() {
-    	var toAdd = $("input.player1Name").val();
-        $('.player1Output').append("<p>"+toAdd+"</p>");
-    });
-
-     $('button.addPlayer2').click(function() {
-    	var toAdd = $("input.player2Name").val();
-        $('.player2Output').append("<p>"+toAdd+"</p>");
     });
 
 // reset button returns both players to start line and button switches to start button

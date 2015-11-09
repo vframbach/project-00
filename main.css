@@ -75,6 +75,10 @@ body {
 	color: blue;
 }
 
+.start-button {
+	margin: 25px;
+}
+
 .reset-button {
 	display: none;
 }
@@ -99,4 +103,12 @@ body {
 
 .checkered-flag {
 	width: 155px;
+}
+
+.player1Text {
+	color: red;
+}
+
+.player2Text {
+	color: blue;
 }

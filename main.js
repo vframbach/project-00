@@ -15,11 +15,11 @@ var player1Positions = [
 	{left: "50%", top: "88%"},
 	{left: "30%", top: "88%"},
 	{left: "10%", top: "88%"},
-	{left: "0%", top: "90%"},
-	{left: "0%", top: "70%"},
-	{left: "0%", top: "50%"},
-	{left: "0%", top: "30%"},
-	{left: "0%", top: "10%"},
+	{left: "2%", top: "90%"},
+	{left: "2%", top: "70%"},
+	{left: "2%", top: "50%"},
+	{left: "2%", top: "30%"},
+	{left: "2%", top: "10%"},
 	{left: "10%", top: "0%"},
 	{left: "30%", top: "0%"},
 	{left: "50%", top: "0%"}
@@ -64,6 +64,7 @@ $(document).ready(function() {
 
 // key up after key press signals movement
 // player 1 is X (key code 88), player 2 is O (key code 79)
+// 80 is the # of ms to get from one position to another
     $(document).keyup(function(e) {
     	if (!isGameStarted || gameWinner) {
     		return;
@@ -94,6 +95,7 @@ $(document).ready(function() {
         }
     });
 
+// hit enter (13) to set player name in text box
     $('.player1Name, .player2Name').keypress(function(e) {
     	if (e.keyCode == 13) {
     		this.blur();

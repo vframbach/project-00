@@ -81,6 +81,7 @@ body {
 
 .reset-button {
 	display: none;
+	margin: 25px;
 }
 
 .player1Name {

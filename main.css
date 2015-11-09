@@ -1,9 +1,28 @@
 html, body {
 	height: 100%;
+	font-family: 'Righteous', cursive;
 }
 
 body {
 	background-color: #C0C0C0;
+}
+
+.title {
+	font-size: 75px;
+	text-align: center;
+	text-shadow: 5px 5px white;
+}
+.instructions {
+	background-color: #999;
+}
+
+.finish-line {
+	position: absolute;
+    width: 5px;
+    height: 100px;
+    background-color: white;
+    left: 50%;
+    display: none;
 }
 
 .racetrack {
@@ -23,6 +42,7 @@ body {
 	position: absolute;
 	right: 100px;
 	top: 100px;
+	padding: 40px;
 }
 
 
@@ -32,7 +52,7 @@ body {
    	height: 35px;
     position: absolute;
     top: 0%;
-    left: 10%;
+    left: 50%;
     width: 35px;
 }
 
@@ -44,7 +64,7 @@ body {
     position: absolute;
     width: 35px;
     top: 5%;
-    left: 10%;
+    left: 50%;
 }
 
 .player1 {
@@ -68,7 +88,7 @@ body {
 
 .player2Name {
     background: transparent;
-    border: 1px dashed hsl(240, 43%, 83%);
+    border: 1px dashed hsl(240, 60%, 90%);
     font-size: 30px;
     width: 100%;
 }
@@ -78,9 +98,5 @@ body {
 }
 
 .checkered-flag {
-	width: 200px;
-}
-
-.player-names {
-	padding: 80px;
+	width: 155px;
 }

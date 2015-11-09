@@ -1,9 +1,7 @@
 //player positions as they move around board
-//written as percentages so size of board can be changed
+//written as percentages so size of board can be changed and game will still work
 
 var player1Positions = [
-	{left: "10%", top: "0%"},
-	{left: "30%", top: "0%"},
 	{left: "50%", top: "0%"},
 	{left: "70%", top: "0%"},
 	{left: "90%", top: "0%"},
@@ -21,12 +19,13 @@ var player1Positions = [
 	{left: "0%", top: "70%"},
 	{left: "0%", top: "50%"},
 	{left: "0%", top: "30%"},
-	{left: "0%", top: "10%"}
+	{left: "0%", top: "10%"},
+	{left: "10%", top: "0%"},
+	{left: "30%", top: "0%"},
+	{left: "50%", top: "0%"}
 ];
 
 var player2Positions = [
-	{left: "10%", top: "5%"},
-	{left: "30%", top: "5%"},
 	{left: "50%", top: "5%"},
 	{left: "70%", top: "5%"},
 	{left: "95%", top: "5%"},
@@ -44,7 +43,10 @@ var player2Positions = [
 	{left: "5%", top: "70%"},
 	{left: "5%", top: "50%"},
 	{left: "5%", top: "30%"},
-	{left: "5%", top: "10%"}
+	{left: "5%", top: "10%"},
+	{left: "10%", top: "5%"},
+	{left: "30%", top: "5%"},
+	{left: "50%", top: "5%"}
 ];
 
 $(document).ready(function() {
@@ -104,6 +106,7 @@ $(document).ready(function() {
     	isGameStarted = true;
     	$('.start-button').hide();
     	$('.reset-button').show();
+    	$('.finish-line').show();
     });
     function resetGame() {
     	player1.position = 0;
@@ -114,6 +117,7 @@ $(document).ready(function() {
 		$('.other-box').animate(player2Positions[player2.position],80);
     	$('.start-button').show();
     	$('.reset-button').hide();
+    	$('.finish-line').hide();
     }
 // reset button returns both players to start line and button switches to start button
     $( '.reset-button' ).click(function() {

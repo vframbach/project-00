@@ -6,29 +6,45 @@
 
  <!-- custom styles -->
  <link rel="stylesheet" type="text/css" href="main.css">
+ <link href='https://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
 	<meta charset="UTF-8">
 	<title>Race car game!</title>
 </head>
 <body>
 	<div class="racetrack">
-		<div class="inner-racetrack">
-			<div class="fluid-container player-names">
-				<div class="row-fluid">
-				<div class="col-md-4 player1 well">
-					<p><input type="text" class="player1Name" value="Name goes here! "></p>
-		        	<p class="player1Output"></p>
+		<div class="finish-line">
+		</div>
+		<div class="fluid-container inner-racetrack">
+			<div class="row title">
+			<img src="checkered-flag.png" class="checkered-flag"> 
+			Racing game! 
+			<img src="checkered-flag.png" class="checkered-flag">
+			</div>
+			<div class="row">
+				<div class="col-md-4 player1 text-center">
+					<p><input type="text" class="player1Name text-center" value="Name goes here! "></p>
+	        		<p class="player1Output"></p>
 				</div>
 				<div class="col-md-4 text-center">
-					<button type="button" class="btn btn-default start-button">Start game</button>
-					<button type="button" class="btn btn-default reset-button">Reset game</button>
-					<img src="checkered-flag.png" class="checkered-flag">
+					<p><button type="button" class="btn btn-success btn-lg start-button">Start game</button>
+					<button type="button" class="btn btn-warning btn-lg reset-button">Reset game</button></p>
+					
 				</div>
-				<div class="col-md-4 player2 well">
-					<p><input type="text" class="player2Name" value="Name goes here! "></p>
+				<div class="col-md-4 player2 text-center">
+					<p><input type="text" class="player2Name text-center" value="Name goes here! "></p>
 		        	<p class="player2Output"></p>
 				</div>
 			</div>
-		  </div> 
+			<div class="row">
+				<div class="col-md-3"></div>
+				<div class="col-md-6 text-center">
+					<div class="well instructions">
+					Player 1: hit the X key to move
+					Player 2: hit the O to move
+					Hit the Start button to start the game. First player to the finish line wins!
+					</div>
+				</div>
+			</div>
 		</div>
 		<div class="box"></div>
      	<div class="other-box"></div>

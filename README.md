@@ -3,6 +3,10 @@
 This game pits your key pressing speed against that of your opponent as you race around the track.
 
 ![](screenshot.png)
+
+## Link to game, hosted on Bitballoon
+
+[http://racing-game.bitballoon.com/](http://racing-game.bitballoon.com/)
 ## Technologies used
 
 * Javascript

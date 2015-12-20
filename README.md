@@ -1,13 +1,9 @@
-# Project 0 -- Race car game
+# Race car game
 
 This game pits your key pressing speed against that of your opponent as you race around the track.
 
-
+![](screenshot.png)
 ## Technologies used
-
-* HTML
-
-* CSS 
 
 * Javascript
 
@@ -16,6 +12,10 @@ This game pits your key pressing speed against that of your opponent as you race
 * Bootstrap
 
 * Google fonts
+
+* CSS 
+
+* HTML
 
 
 ## Existing features
